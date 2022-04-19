@@ -13,23 +13,23 @@ function getManager(){
         {
             type: 'input',
             name: 'name',
-            message: 'Please enter the name of the manager',
+            message: 'Please enter the name of the manager: ',
         },
         {
             type: 'input',
             name: 'emplID',
-            message: 'Please enter employee ID number:'
+            message: 'Please enter employee ID number: '
 
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter the email address of the employee',
+            message: 'Please enter the email address of the employee: ',
         },
         {
             type: 'input',
             name: 'officeNum',
-            message: 'Please enter the office number for the employee:',
+            message: 'Please enter the office number for the employee: ',
         }
     ])
     .then((answers) =>{
@@ -49,23 +49,23 @@ function addEngineer(){
         {
             type: 'input',
             name: 'name',
-            message: 'Please enter the name of the engineer',
+            message: 'Please enter the name of the engineer: ',
         },
         {
             type: 'input',
             name: 'emplID',
-            message: 'Please enter employee ID number:'
+            message: 'Please enter employee ID number: '
             
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter the email address of the employee',
+            message: 'Please enter the email address of the employee: ',
         },
         {
             type: 'input',
             name: 'github',
-            message: 'Please enter the github username of the employee',
+            message: 'Please enter the github username of the employee: ',
         }
     ])
     .then((answers) =>{
@@ -81,28 +81,28 @@ function addIntern(){
         {
             type: 'input',
             name: 'name',
-            message: 'Please enter the name of the engineer',
+            message: 'Please enter the name of the intern: ',
         },
         {
             type: 'input',
             name: 'emplID',
-            message: 'Please enter employee ID number:'
+            message: 'Please enter employee ID number of the intern: '
             
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Please enter the email address of the employee',
+            message: 'Please enter the email address of the intern: ',
         },
         {
             type: 'input',
-            name: 'github',
-            message: 'Please enter the github username of the employee',
+            name: 'school',
+            message: 'Please enter the school that the intern attends: ',
         }
     ])
     .then((answers) =>{
-        const engineerInfo = new engineer(answers.name, answers.emplID, answers.email, answers.github);
-        Team.push(engineerInfo);
+        const internInfo = new intern(answers.name, answers.emplID, answers.email, answers.school);
+        Team.push(internInfo);
         addMember();       
     })
 }
