@@ -38,6 +38,34 @@ function getManager(){
         Team.push(managerInfo);
         console.log(managerInfo);
         console.log(Team);
+        addMember();
+    })
+}
+
+function addMember(){
+    inquirer
+    .prompt([
+        {
+            type: 'list',
+            name: 'addMenu',
+            message: 'Please select if you would like to add another team member',
+            choices: ['Add an Engineer', 'Add an Intern', 'There are no more team members to add.'],
+        }
+    ])
+    .then((answer) => {
+        switch (answer.addMenu){
+            case "Add an Engineer":
+                addEngineer();
+                break;
+
+            case "Add an Intern":
+                addIntern();
+                break;
+            
+            case "There are no more team members to add.":
+                createPage();
+                break
+        }
     })
 }
 
