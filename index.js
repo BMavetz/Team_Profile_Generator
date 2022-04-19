@@ -42,6 +42,71 @@ function getManager(){
     })
 }
 
+
+function addEngineer(){
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Please enter the name of the engineer',
+        },
+        {
+            type: 'input',
+            name: 'emplID',
+            message: 'Please enter employee ID number:'
+            
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the email address of the employee',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter the github username of the employee',
+        }
+    ])
+    .then((answers) =>{
+        const engineerInfo = new engineer(answers.name, answers.emplID, answers.email, answers.github);
+        Team.push(engineerInfo);
+        addMember();       
+    })
+}
+
+function addIntern(){
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'Please enter the name of the engineer',
+        },
+        {
+            type: 'input',
+            name: 'emplID',
+            message: 'Please enter employee ID number:'
+            
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter the email address of the employee',
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter the github username of the employee',
+        }
+    ])
+    .then((answers) =>{
+        const engineerInfo = new engineer(answers.name, answers.emplID, answers.email, answers.github);
+        Team.push(engineerInfo);
+        addMember();       
+    })
+}
+
 function addMember(){
     inquirer
     .prompt([
@@ -68,6 +133,4 @@ function addMember(){
         }
     })
 }
-
-
 getManager();
