@@ -35,6 +35,11 @@ function getManager(){
     .then((answers) =>{
         console.log(answers);
         const managerInfo = new manager(answers.name, answers.emplID, answers.email, answers.officeNum);
-        team.push(managerInfo);
+        Team.push(managerInfo);
+        console.log(managerInfo);
+        console.log(Team);
     })
 }
+
+
+getManager();
