@@ -103,8 +103,13 @@ function addIntern(){
     .then((answers) =>{
         const internInfo = new intern(answers.name, answers.emplID, answers.email, answers.school);
         Team.push(internInfo);
+        console.log(Team);
         addMember();       
     })
+}
+
+function createPage() {
+    fs.writeFile('index.html', generateHTML(Team));
 }
 
 function addMember(){
