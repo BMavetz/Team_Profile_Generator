@@ -109,7 +109,11 @@ function addIntern(){
 }
 
 function createPage() {
-    fs.writeFile('index.html', generateHTML(Team));
+    
+    fs.writeFile('index.html', generateHTML(Team), (err) =>
+
+    err ? console.log(err) : console.log('Successfully created index.html!')
+    );
 }
 
 function addMember(){

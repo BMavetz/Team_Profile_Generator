@@ -1,0 +1,21 @@
+.employees{
+    justify-content: center;
+}
+
+.jumbotron{
+    background-color: lightblue;
+}
+
+.Title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 60px;
+}
+
+.card{
+    margin: 10px;
+}
+
+.card-header{
+    background-color: indianred;
+}
