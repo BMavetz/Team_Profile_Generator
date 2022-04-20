@@ -5,7 +5,7 @@ const generateHTML = (data) => {
      for(let i = 0; i < data.length; i++){
          if (data[i].getRole() === "Manager"){
              managerInfo.push(managerHTML(data[i]));
-             console.log(managerInfo);
+             
          }
          if (data[i].getRole() === "Engineer"){
              engineerInfo.push(engineerHTML(data[i]))
@@ -79,7 +79,6 @@ function managerHTML(manager){
         </div>
     </div>
     `
-    console.log(managerCard);
     return managerCard;
 }
 
@@ -90,7 +89,7 @@ function engineerHTML(engineer){
         <div class="engineer">
             <div class="card-header">
                 <h3> ${engineer.name} </h4>
-                <h4> <i class="fa-solid fa-head-side-brain"></i> Engineer </h4>
+                <h4> <i class="fa-solid fa-briefcase"></i> Engineer </h4>
             </div>
 
             <div style="padding-left: 10px;">

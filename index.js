@@ -33,11 +33,9 @@ function getManager(){
         }
     ])
     .then((answers) =>{
-        console.log(answers);
+        
         const managerInfo = new manager(answers.name, answers.emplID, answers.email, answers.officeNum);
         Team.push(managerInfo);
-        console.log(managerInfo);
-        console.log(Team);
         addMember();
     })
 }
@@ -103,7 +101,6 @@ function addIntern(){
     .then((answers) =>{
         const internInfo = new intern(answers.name, answers.emplID, answers.email, answers.school);
         Team.push(internInfo);
-        console.log(Team);
         addMember();       
     })
 }
