@@ -1,18 +1,20 @@
 function generateHTML(data){
-     const internInfo= '';
-     const engineerInfo= '';
+     const internInfo= [];
+     const engineerInfo= [];
      const managerInfo = '';
      for(let i = 0; i < data.length; i++){
          if (data[i].getRole() === "Manager"){
             managerInfo = managerHTML(data[i]);
          }
          if (data[i].getRole() === "Engineer"){
-             engineerInfo === engineerHTML(data[i])
+             engineerInfo.push(engineerHTML(data[i]))
          }
          if (data[i].getRole() === "Intern"){
-             internInfo = internHTML(data[i])
+             internInfo.push(internHTML(data[i]))
          }
      }
+     engineerInfo.join('');
+     internInfo.join('');
      return `
      <!DOCTYPE html>
      <html lang="en">
@@ -74,4 +76,50 @@ function managerHTML(manager){
     </div>
     `
     return managerCard;
+}
+
+function managerHTML(engineer){
+    let engineerCard =
+    `
+    <div class="card contents" style="width:22rem; height: 15rem;">
+        <div class="engineer">
+            <div class="card-header">
+                <h3> ${engineer.name} </h4>
+                <h4> <i class= "fa-solid fa-mug-hot"></i> Engineer </h4>
+            </div>
+
+            <div>
+                <div class= "info">
+                    <p> ID: ${engineer.emplID} </p>
+                    <p> Email: <a href="mailto: ${engineer.email}">${engineer.email}</a></p>
+                    <p> Github: <a href="https://github.com/${engineer.github}">${engineer.github}</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+    return engineerCard;
+}
+
+function managerHTML(intern){
+    let internCard =
+    `
+    <div class="card contents" style="width:22rem; height: 15rem;">
+        <div class="intern">
+            <div class="card-header">
+                <h3> ${intern.name} </h4>
+                <h4> <i class= "fa-solid fa-mug-hot"></i> Manager </h4>
+            </div>
+
+            <div>
+                <div class= "info">
+                    <p> ID: ${intern.emplID} </p>
+                    <p> Email: <a href="mailto: ${intern.email}">${intern.email}</a></p>
+                    <p> Office Number: ${intern.school}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    `
+    return internCard;
 }
